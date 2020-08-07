@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://zombie_char.tscn" type="PackedScene" id=1]
+[ext_resource path="res://zombie/zombie.tscn" type="PackedScene" id=1]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -8,15 +8,6 @@
 albedo_color = Color( 0.368627, 0.839216, 0.219608, 1 )
 
 [node name="Game" type="Spatial"]
-
-[node name="zombie_char" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64883, 0, 0 )
-
-[node name="zombie_char2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1344, 0, 3.14435 )
-
-[node name="zombie_char3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.314001, 0, 6.55387 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.604126, 0.796889, 0, -0.796889, 0.604126, 0, 7.21724, 4.05817 )
@@ -31,3 +22,6 @@ near = 0.01
 transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 10, -4.98641, 0, 10.0201 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
+
+[node name="Zombie" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.32715 )
