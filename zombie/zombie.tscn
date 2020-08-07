@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://zombie/zombie_mesh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://zombie/zombie.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://zombie/FSM/states/Death/Death.tscn" type="PackedScene" id=7]
 [ext_resource path="res://zombie/FSM/states/Idle/Idle.tscn" type="PackedScene" id=10]
 [ext_resource path="res://zombie/FSM/transitions/OnDeath/OnDeath.tscn" type="PackedScene" id=12]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.39373, 0.915711, 0.376921 )
 
 [node name="Zombie" type="Spatial"]
 script = ExtResource( 2 )
@@ -23,20 +26,20 @@ initManually = true
 "Create new:/Create transition with name:" = null
 GraphData = {
 "Death": Vector2( 931, 490 ),
-"Death_": Vector2( 931, 490.356 ),
+"Death_": Vector2( 931, 490 ),
 "Idle": Vector2( 150, 448 ),
-"Idle_": Vector2( 150, 448.356 ),
+"Idle_": Vector2( 150, 448 ),
 "Idle__": Vector2( 163.5, 339 ),
 "OnDeath": Vector2( 883, 280 ),
-"OnDeath_": Vector2( 883, 280.356 ),
+"OnDeath_": Vector2( 883, 280 ),
 "OnDestroyed": Vector2( 908, 250 ),
 "OnDestroyed_": Vector2( 908, 250 ),
 "OnLevelStarted": Vector2( 302, 242 ),
 "OnLevelStarted_": Vector2( 302, 242 ),
 "OnWalk": Vector2( 357, 265 ),
-"OnWalk_": Vector2( 357, 265.356 ),
+"OnWalk_": Vector2( 357, 265 ),
 "Walk": Vector2( 607, 226 ),
-"Walk_": Vector2( 607, 226.356 ),
+"Walk_": Vector2( 607, 226 ),
 "Walk__": Vector2( 541.5, 337 )
 }
 
@@ -57,3 +60,11 @@ path2TargetState = NodePath("../../States/Walk")
 [node name="OnDeath" parent="FSM3D/Transitions" instance=ExtResource( 12 )]
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walk") ]
 path2TargetState = NodePath("../../States/Death")
+
+[node name="Area" type="Area" parent="." groups=[
+"zombie",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906587, 0 )
+shape = SubResource( 1 )
