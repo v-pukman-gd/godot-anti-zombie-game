@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://zombie/zombie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://weapon/mine.tscn" type="PackedScene" id=2]
+[ext_resource path="res://grass4.jpg" type="Texture" id=3]
 
 [sub_resource type="PlaneMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.368627, 0.839216, 0.219608, 1 )
+albedo_texture = ExtResource( 3 )
 
 [node name="Game" type="Spatial"]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.604126, 0.796889, 0, -0.796889, 0.604126, 0, 7.21724, 4.05817 )
+shadow_bias = 0.48
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1.6281e-07, -0.53162, 0.846983, -6.01265e-09, 0.846983, 0.53162, -1, 8.14603e-08, -1.41093e-07, 9.24866, 9.31003, 10.6844 )
@@ -20,12 +23,27 @@ current = true
 near = 0.01
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 10, -4.98641, 0, 10.0201 )
+transform = Transform( -5.24537e-07, 0, -6, 0, 1, 0, 12, 0, -2.62268e-07, -4.88338, 0, 10.0201 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="Zombie" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.32715 )
 
+[node name="Zombie2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14493, 0, -2.81925 )
+
+[node name="Zombie3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06027, 0, 0.338294 )
+
+[node name="Zombie4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07336, 0, 6.96729 )
+
 [node name="Mine" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0155218, 6.56354 )
+
+[node name="Mine2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18944, -0.0155218, 14.5745 )
+
+[node name="Mine3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.09374, -0.0155218, 8.97123 )
