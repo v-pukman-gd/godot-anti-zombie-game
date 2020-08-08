@@ -6,3 +6,4 @@
 background_mode = 2
 background_sky = SubResource( 1 )
 background_sky_custom_fov = 74.5
+ambient_light_color = Color( 0.00392157, 0, 0, 1 )
