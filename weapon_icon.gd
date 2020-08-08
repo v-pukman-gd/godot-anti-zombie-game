@@ -29,10 +29,11 @@ func _process(delta):
 	if dragging and Input.is_action_just_released("pick_weapon"):
 		dragging = false
 		position = orinal_pos
-		Game.drop_weapon(weapon_id)
+		Game.drop_weapon()
 		
 	if dragging:
 		position = get_global_mouse_position()
+		Game.weapon_id = weapon_id
 		
 func _on_area_mouse_entered():
 	if is_static:

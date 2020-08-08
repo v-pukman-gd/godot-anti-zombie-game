@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+params_blend_mode = 3
+albedo_color = Color( 0.945098, 0.945098, 0.945098, 1 )
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 10, 2 )
+
+[node name="YardRowColor" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1 )
+mesh = SubResource( 2 )
+material/0 = null

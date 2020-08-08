@@ -1,16 +1,14 @@
 extends Spatial
 
 onready var focus_mesh = $FocusMesh
+var focus_on = false
 
-func _on_mouse_entered():
-	#print("mmouse enter!", self)
+func _on_mouse_entered():	
+	focus_on = true	
 	focus_mesh.show()
-	Game.weapon_pos = self.global_transform.origin
-	
-	print(Game.weapon_pos)
+	Game.yard_tile = self
 
-func _on_mouse_exited():
-	#print("mouse exit!", self)
+func _on_mouse_exited():	
+	focus_on = false	
 	focus_mesh.hide()
-	Game.weapon_pos = null
 

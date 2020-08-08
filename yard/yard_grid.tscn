@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://yard/yard_tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://yard/yard_row_color.tscn" type="PackedScene" id=2]
 
 [node name="YardGrid" type="Spatial"]
 
@@ -40,6 +41,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 [node name="YardTile5" parent="Column2" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
 
+[node name="YardRowColor" parent="Column2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -13 )
+
 [node name="Column3" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 14 )
 
@@ -75,6 +79,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 
 [node name="YardTile5" parent="Column4" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
+
+[node name="YardRowColor2" parent="Column4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5 )
 
 [node name="Column5" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10 )
@@ -112,6 +119,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 [node name="YardTile5" parent="Column6" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
 
+[node name="YardRowColor" parent="Column6" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3 )
+
 [node name="Column7" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 6 )
 
@@ -148,6 +158,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 [node name="YardTile5" parent="Column8" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
 
+[node name="YardRowColor" parent="Column8" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 11 )
+
 [node name="Column9" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2 )
 
@@ -165,3 +178,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
 
 [node name="YardTile5" parent="Column9" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
+
+[node name="YardRowColor" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1.8, 0, -7.86805e-08, -9, 0, 9 )
+
+[node name="YardRowColor2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1.8, 0, -7.86805e-08, -5, 0, 9 )
+
+[node name="YardRowColor3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1.8, 0, -7.86805e-08, -1, 0, 9 )
