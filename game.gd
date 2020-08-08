@@ -15,7 +15,10 @@ func drop_weapon():
 			mine.translation = weapon_pos
 			get_node("/root/Level").add_child(mine)
 			
-			yard_tile.focus_on = false
+			yard_tile.set_focus(false)
 			
 			print("Spawn:", weapon_pos, weapon_id)
+			
+	yard_tile = null
+	weapon_id = null
 	

@@ -4,11 +4,16 @@ onready var focus_mesh = $FocusMesh
 var focus_on = false
 
 func _on_mouse_entered():	
-	focus_on = true	
-	focus_mesh.show()
-	Game.yard_tile = self
+	if Game.weapon_id:
+		set_focus(true)
+		Game.yard_tile = self
 
 func _on_mouse_exited():	
-	focus_on = false	
-	focus_mesh.hide()
+	set_focus(false)
 
+func set_focus(val):
+	focus_on = val
+	if focus_on:
+		focus_mesh.show()
+	else:
+		focus_mesh.hide()
