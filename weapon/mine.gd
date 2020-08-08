@@ -11,5 +11,11 @@ func _on_area_entered(area):
 		
 func on_collided():
 	zombie.is_dead = true
-	hide()
+	$AnimationPlayer.play("explode") # will call hide_mesh and destroy
+
+func hide_mesh():
+	$CSGMesh.hide()
+	
+func destroy():
+
 	queue_free()

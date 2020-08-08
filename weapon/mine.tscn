@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://weapon/mine.gd" type="Script" id=1]
 [ext_resource path="res://weapon/mine_blink_mat.tres" type="Material" id=2]
+[ext_resource path="res://particles/fire_particle.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.388235, 0.392157, 0.278431, 1 )
@@ -11,6 +12,40 @@ albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.271135, 0.45992, 0.333961 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "explode"
+length = 2.0
+step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.01, 1.92 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_mesh"
+}, {
+"args": [  ],
+"method": "destroy"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FireParicle/Particles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.01, 0.41 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [node name="Mine" type="Spatial"]
 script = ExtResource( 1 )
@@ -45,4 +80,12 @@ material = ExtResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0377827, 0.370033, 0.0183132 )
 shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/explode = SubResource( 4 )
+
+[node name="FireParicle" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4168, 0 )
 [connection signal="area_entered" from="Area" to="." method="_on_area_entered"]
+
+[editable path="FireParicle"]

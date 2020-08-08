@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://particles/fire1.jpg" type="Texture" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 0.1, 0.1, 0.1 )
+direction = Vector3( 0, 1, 0 )
+spread = 2.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.0
+scale = 4.0
+anim_speed = 1.0
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = true
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+
+[node name="FireParicle" type="Spatial"]
+
+[node name="Particles" type="Particles" parent="."]
+emitting = false
+amount = 64
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 3 )
