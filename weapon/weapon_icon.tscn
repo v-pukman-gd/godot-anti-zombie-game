@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://mine_icon_txt.png" type="Texture" id=1]
-[ext_resource path="res://weapon_icon.gd" type="Script" id=2]
+[ext_resource path="res://weapon/mine/mine_icon_txt.png" type="Texture" id=1]
+[ext_resource path="res://weapon/weapon_icon.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.3173, 10 )
@@ -12,7 +12,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-[node name="Sprite2" type="Sprite" parent="Sprite"]
+[node name="IconSprite" type="Sprite" parent="Sprite"]
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 1 )
 

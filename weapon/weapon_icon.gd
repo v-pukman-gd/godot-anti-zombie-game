@@ -1,28 +1,38 @@
 extends Node2D
 
 export (bool) var is_static = true
-export (String) var weapon_id = "mine"
+export (String) var weapon_id = null
+
+export (float) var icon_scale = 1
+export(Texture) var icon_texture 
 
 var normal_color = Color("d7d7d7")
 var active_color = Color("ffffff")
 
 onready var sprite = $Sprite
+onready var icon_sprite = $Sprite/IconSprite
+
 var on_focus = false
 var dragging = false
 var orinal_pos
 
 func _ready():
 	orinal_pos = self.position
+	
 	if is_static:
-		$Label.text = weapon_id
+		if weapon_id:
+			$Label.text = weapon_id
 	else:
 		$Label.text = ""
+		
+	icon_sprite.scale = Vector2(icon_scale, icon_scale)
+	icon_sprite.texture = icon_texture
 
 func _process(delta):
 	if is_static:
 		return
 		
-	if not dragging and on_focus and Input.is_action_pressed("pick_weapon"):
+	if not dragging and on_focus and Input.is_action_pressed("pick_weapon") and not Game.weapon_id:
 		#position = get_global_mouse_position()
 		dragging = true
 		
@@ -32,7 +42,7 @@ func _process(delta):
 		Game.drop_weapon()
 		
 	if dragging:
-		position = get_global_mouse_position()
+		position = get_global_mouse_position() - self.get_parent().position
 		Game.weapon_id = weapon_id
 		
 func _on_area_mouse_entered():

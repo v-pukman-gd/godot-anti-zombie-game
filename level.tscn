@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://grass4.jpg" type="Texture" id=1]
-[ext_resource path="res://weapon/kid/kid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://weapon/kid/kid_mesh.tscn" type="PackedScene" id=2]
 [ext_resource path="res://zombie/zombie.tscn" type="PackedScene" id=3]
 [ext_resource path="res://yard/yard_grid.tscn" type="PackedScene" id=4]
-[ext_resource path="res://weapon_icon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://weapon/weapon_icon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://weapon/mine/mine_icon_txt.png" type="Texture" id=6]
+[ext_resource path="res://weapon/kid/kid_icon_txt.png" type="Texture" id=7]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -57,12 +59,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WeaponIconStatic" parent="UI" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.4426 )
+[node name="Mine" type="Node2D" parent="UI"]
 
-[node name="WeaponIcon" parent="UI" instance=ExtResource( 5 )]
+[node name="WeaponIconStatic" parent="UI/Mine" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.4426 )
+weapon_id = "mine"
+icon_scale = 0.15
+icon_texture = ExtResource( 6 )
+
+[node name="WeaponIcon" parent="UI/Mine" instance=ExtResource( 5 )]
 position = Vector2( 50.2279, 37.4426 )
 is_static = false
+weapon_id = "mine"
+icon_scale = 0.15
+icon_texture = ExtResource( 6 )
+
+[node name="Kid" type="Node2D" parent="UI"]
+position = Vector2( 82.0955, 0 )
+
+[node name="WeaponIconStatic" parent="UI/Kid" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.4426 )
+weapon_id = "kid"
+icon_scale = 0.3
+icon_texture = ExtResource( 7 )
+
+[node name="WeaponIcon" parent="UI/Kid" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.4426 )
+is_static = false
+weapon_id = "kid"
+icon_scale = 0.3
+icon_texture = ExtResource( 7 )
 
 [node name="YardGrid" parent="." instance=ExtResource( 4 )]
 
