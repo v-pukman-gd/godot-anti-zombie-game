@@ -4,7 +4,7 @@ var yard_tile = null
 var weapon_id = null
 var weapon_pos
 
-var mine_scn = preload("res://weapon/mine.tscn")
+var mine_scn = preload("res://weapon/mine/mine.tscn")
 
 func drop_weapon():		
 	# Process if values present
