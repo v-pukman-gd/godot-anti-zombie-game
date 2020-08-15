@@ -246,7 +246,7 @@ bind/73/name = "boy_facial_anim_joint"
 bind/73/bone = -1
 bind/73/pose = Transform( 100, -1.4243e-12, 8.74228e-06, 0, -100, -1.62921e-05, 8.74228e-06, 1.62921e-05, -100, -1, 1.00001, 1 )
 
-[sub_resource type="ArrayMesh" id=3]
+[sub_resource type="ArrayMesh" id=6]
 resource_name = "Boy01_Eyes_Geo"
 surfaces/0 = {
 "aabb": AABB( -0.144441, 1.51305, 0.164928, 0.288882, 0.142185, 0.0968858 ),
@@ -1182,7 +1182,7 @@ skin = SubResource( 2 )
 material/0 = null
 
 [node name="Boy01_Eyes_Geo" type="MeshInstance" parent="Armature/Skeleton"]
-mesh = SubResource( 3 )
+mesh = SubResource( 6 )
 skin = SubResource( 2 )
 material/0 = null
 
