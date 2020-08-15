@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://weapon/kid/stone.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.886275, 0.886275, 0.886275, 1 )
+
+[node name="Stone" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+
+[node name="CSGSphere" type="CSGSphere" parent="CSGMesh"]
+radius = 0.1
+radial_segments = 6
+material = SubResource( 1 )
