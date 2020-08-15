@@ -31,7 +31,7 @@ tracks/0/keys = {
 "method": "hide_mesh"
 }, {
 "args": [  ],
-"method": "destroy"
+"method": "remove"
 } ]
 }
 tracks/1/type = "value"
@@ -49,6 +49,7 @@ tracks/1/keys = {
 
 [node name="Mine" type="Spatial"]
 script = ExtResource( 1 )
+damage = 1000
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
