@@ -1,5 +1,7 @@
 extends Node
 
+const MAX_WEAPON_DISTANCE = 20
+
 var yard_tile = null
 var weapon_id = null
 var weapon_pos
