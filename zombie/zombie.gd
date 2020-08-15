@@ -1,6 +1,6 @@
 extends Spatial
 
-var speed = Vector3(0, 0, 1)
+var speed = Vector3(-1, 0, 0)
 onready var fsm = $FSM3D
 onready var anim = $ZombieMesh/AnimationPlayer
 

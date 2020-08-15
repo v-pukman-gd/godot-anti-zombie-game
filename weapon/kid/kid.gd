@@ -14,5 +14,5 @@ func _ready():
 
 func attack():
 	var stone = stone_scn.instance()
-	stone.translation = Vector3(0, 1.5, -1)
+	stone.translation = Vector3(1, 1.5, 0)
 	add_child(stone)
