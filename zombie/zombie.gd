@@ -4,6 +4,8 @@ var speed = Vector3(0, 0, 1)
 onready var fsm = $FSM3D
 onready var anim = $ZombieMesh/AnimationPlayer
 
+var life_span = 20
+
 var is_walking = false
 var is_dead = false
 
@@ -18,3 +20,11 @@ func _input(event):
 
 func walk(delta):
 	self.translation += speed * delta
+	
+func on_weapon_hit(damage):
+	if is_dead:
+		return
+		
+	life_span -= damage
+	if life_span <= 0:
+		is_dead = true

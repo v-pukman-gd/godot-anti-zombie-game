@@ -64,6 +64,7 @@ path2TargetState = NodePath("../../States/Death")
 [node name="Area" type="Area" parent="." groups=[
 "zombie",
 ]]
+transform = Transform( 1, 0, 0, 0, 1.26699, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906587, 0 )
