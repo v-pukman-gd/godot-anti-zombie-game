@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://obstacle/road_block/block2_mat.tres" type="Material" id=1]
+[ext_resource path="res://obstacle/base_obstacle.gd" type="Script" id=2]
+[ext_resource path="res://obstacle/road_block/block2.obj" type="ArrayMesh" id=4]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.516935, 1, 0.921015 )
+
+[node name="RoadBlockLight" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -0.0915127, 0, 0.982838, 0, 1, 0, -0.518994, 0, -0.173301, -0.22592, -0.00713336, -0.968299 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.484664, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 1 )

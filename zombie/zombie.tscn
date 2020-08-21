@@ -23,7 +23,6 @@ script = ExtResource( 2 )
 [node name="FSM3D" type="Spatial" parent="."]
 script = ExtResource( 3 )
 initManually = true
-enableDebug = true
 "Initial state:" = ""
 "Create new:/Subdirectory for FSM nodes:" = "FSM"
 "Create new:/Create state with name:" = null
