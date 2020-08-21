@@ -5,9 +5,13 @@ onready var fsm = $FSM3D
 onready var anim = $ZombieMesh/AnimationPlayer
 
 var life_span = 20
+var attack_strength = 5
 
 var is_walking = false
 var is_dead = false
+var is_stuck = false
+
+var obstacle = null
 
 func _ready():
 	fsm.init()
@@ -28,3 +32,16 @@ func on_weapon_hit(damage):
 	life_span -= damage
 	if life_span <= 0:
 		is_dead = true
+
+func on_obstacle_hit(obstacle):
+	is_stuck = true
+	self.obstacle = obstacle
+	
+func attack_obstacle():
+	print("attack_obstacle")
+	if is_stuck and obstacle:
+		obstacle.life_span -= attack_strength
+		if obstacle.life_span <= 0:
+			obstacle.remove()
+			is_stuck = false
+			obstacle = null
