@@ -12,7 +12,7 @@ script = ExtResource( 2 )
 life_span = 50
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -0.0915127, 0, 0.982838, 0, 1, 0, -0.518994, 0, -0.173301, -0.22592, -0.00713336, -0.968299 )
+transform = Transform( -0.0832099, 0, 0.893667, 0, 0.885046, 0, -0.479394, 0, -0.160078, -0.22592, 0.00290758, -0.888246 )
 mesh = ExtResource( 4 )
 material/0 = ExtResource( 1 )
 

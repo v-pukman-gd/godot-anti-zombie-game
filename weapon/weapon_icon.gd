@@ -1,11 +1,12 @@
-tool
+#tool
 extends Node2D
 
-export (bool) var is_static = true
-export (String) var weapon_id = null
-
-export (float) var icon_scale = 1
-export(Texture) var icon_texture 
+# params:
+var is_static = true
+var weapon_id: String
+var icon_scale = 1.0
+var icon_texture: Texture 
+#####
 
 var normal_color = Color("d7d7d7")
 var active_color = Color("ffffff")
@@ -17,7 +18,10 @@ var on_focus = false
 var dragging = false
 var orinal_pos
 
-func _ready():
+var is_configured = false
+var setup_completed = false
+
+func setup():
 	orinal_pos = self.position
 	
 	if is_static:
@@ -30,6 +34,13 @@ func _ready():
 	icon_sprite.texture = icon_texture
 
 func _process(delta):
+	if not is_configured:
+		return
+		
+	if not setup_completed:
+		setup()
+		setup_completed = true
+		
 	if is_static:
 		return
 		

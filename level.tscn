@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://grass4.jpg" type="Texture" id=1]
+[ext_resource path="res://panel/weapon_panel_item.tscn" type="PackedScene" id=2]
 [ext_resource path="res://zombie/zombie.tscn" type="PackedScene" id=3]
 [ext_resource path="res://yard/yard_grid.tscn" type="PackedScene" id=4]
-[ext_resource path="res://weapon/weapon_icon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://weapon/kid/kid_icon_txt.png" type="Texture" id=5]
 [ext_resource path="res://weapon/mine/mine_icon_txt.png" type="Texture" id=6]
-[ext_resource path="res://weapon/kid/kid_icon_txt.png" type="Texture" id=7]
-[ext_resource path="res://obstacle/road_block/road_block_light_icon.png" type="Texture" id=10]
-[ext_resource path="res://obstacle/road_block/road_block_heavy_icon.png" type="Texture" id=11]
-[ext_resource path="res://obstacle/chair/chair_icon.png" type="Texture" id=12]
+[ext_resource path="res://obstacle/road_block/road_block_light_icon.png" type="Texture" id=7]
+[ext_resource path="res://obstacle/chair/chair_icon.png" type="Texture" id=8]
+[ext_resource path="res://obstacle/road_block/road_block_heavy_icon.png" type="Texture" id=9]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -57,91 +57,41 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="UI"]
-margin_right = 418.0
-margin_bottom = 84.0
+margin_right = 424.0
+margin_bottom = 83.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mine" type="Node2D" parent="UI"]
-
-[node name="WeaponIconStatic" parent="UI/Mine" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.4426 )
+[node name="WeaponPanelItem" parent="UI" instance=ExtResource( 2 )]
 weapon_id = "mine"
 icon_scale = 0.15
 icon_texture = ExtResource( 6 )
 
-[node name="WeaponIcon" parent="UI/Mine" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.4426 )
-is_static = false
-weapon_id = "mine"
-icon_scale = 0.15
-icon_texture = ExtResource( 6 )
-
-[node name="Kid" type="Node2D" parent="UI"]
-position = Vector2( 82.0955, 0 )
-
-[node name="WeaponIconStatic" parent="UI/Kid" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.4426 )
+[node name="WeaponPanelItem2" parent="UI" instance=ExtResource( 2 )]
+position = Vector2( 80, 0 )
 weapon_id = "kid"
 icon_scale = 0.3
-icon_texture = ExtResource( 7 )
+icon_texture = ExtResource( 5 )
 
-[node name="WeaponIcon" parent="UI/Kid" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.4426 )
-is_static = false
-weapon_id = "kid"
-icon_scale = 0.3
-icon_texture = ExtResource( 7 )
-
-[node name="BlockLight" type="Node2D" parent="UI"]
+[node name="WeaponPanelItem3" parent="UI" instance=ExtResource( 2 )]
 position = Vector2( 160, 0 )
-
-[node name="WeaponIconStatic" parent="UI/BlockLight" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.8618 )
 weapon_id = "block_light"
 icon_scale = 0.2
-icon_texture = ExtResource( 10 )
+icon_texture = ExtResource( 7 )
 
-[node name="WeaponIcon" parent="UI/BlockLight" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.8618 )
-is_static = false
-weapon_id = "block_light"
-icon_scale = 0.2
-icon_texture = ExtResource( 10 )
-
-[node name="BlockHeavy" type="Node2D" parent="UI"]
-position = Vector2( 239.728, 0 )
-
-[node name="WeaponIconStatic" parent="UI/BlockHeavy" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.8618 )
+[node name="WeaponPanelItem4" parent="UI" instance=ExtResource( 2 )]
+position = Vector2( 240, 0 )
 weapon_id = "block_heavy"
 icon_scale = 0.25
-icon_texture = ExtResource( 11 )
+icon_texture = ExtResource( 9 )
 
-[node name="WeaponIcon" parent="UI/BlockHeavy" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.8618 )
-is_static = false
-weapon_id = "block_heavy"
-icon_scale = 0.25
-icon_texture = ExtResource( 11 )
-
-[node name="Chair" type="Node2D" parent="UI"]
-position = Vector2( 312, 0 )
-
-[node name="WeaponIconStatic" parent="UI/Chair" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.8618 )
+[node name="WeaponPanelItem5" parent="UI" instance=ExtResource( 2 )]
+position = Vector2( 320, 0 )
 weapon_id = "chair"
 icon_scale = 0.2
-icon_texture = ExtResource( 12 )
-
-[node name="WeaponIcon" parent="UI/Chair" instance=ExtResource( 5 )]
-position = Vector2( 50.2279, 37.8618 )
-is_static = false
-weapon_id = "chair"
-icon_scale = 0.2
-icon_texture = ExtResource( 12 )
+icon_texture = ExtResource( 8 )
 
 [node name="YardGrid" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.06694, 0, -10.8913 )
