@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://grass4.jpg" type="Texture" id=1]
-[ext_resource path="res://obstacle/chair/chair.tscn" type="PackedScene" id=2]
 [ext_resource path="res://zombie/zombie.tscn" type="PackedScene" id=3]
 [ext_resource path="res://yard/yard_grid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://weapon/weapon_icon.tscn" type="PackedScene" id=5]
 [ext_resource path="res://weapon/mine/mine_icon_txt.png" type="Texture" id=6]
 [ext_resource path="res://weapon/kid/kid_icon_txt.png" type="Texture" id=7]
-[ext_resource path="res://obstacle/road_block/road_block_heavy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://obstacle/road_block/road_block_light.tscn" type="PackedScene" id=9]
+[ext_resource path="res://obstacle/road_block/road_block_light_icon.png" type="Texture" id=10]
+[ext_resource path="res://obstacle/road_block/road_block_heavy_icon.png" type="Texture" id=11]
+[ext_resource path="res://obstacle/chair/chair_icon.png" type="Texture" id=12]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -92,6 +92,54 @@ weapon_id = "kid"
 icon_scale = 0.3
 icon_texture = ExtResource( 7 )
 
+[node name="BlockLight" type="Node2D" parent="UI"]
+position = Vector2( 160, 0 )
+
+[node name="WeaponIconStatic" parent="UI/BlockLight" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.8618 )
+weapon_id = "block_light"
+icon_scale = 0.2
+icon_texture = ExtResource( 10 )
+
+[node name="WeaponIcon" parent="UI/BlockLight" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.8618 )
+is_static = false
+weapon_id = "block_light"
+icon_scale = 0.2
+icon_texture = ExtResource( 10 )
+
+[node name="BlockHeavy" type="Node2D" parent="UI"]
+position = Vector2( 239.728, 0 )
+
+[node name="WeaponIconStatic" parent="UI/BlockHeavy" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.8618 )
+weapon_id = "block_heavy"
+icon_scale = 0.25
+icon_texture = ExtResource( 11 )
+
+[node name="WeaponIcon" parent="UI/BlockHeavy" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.8618 )
+is_static = false
+weapon_id = "block_heavy"
+icon_scale = 0.25
+icon_texture = ExtResource( 11 )
+
+[node name="Chair" type="Node2D" parent="UI"]
+position = Vector2( 312, 0 )
+
+[node name="WeaponIconStatic" parent="UI/Chair" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.8618 )
+weapon_id = "chair"
+icon_scale = 0.2
+icon_texture = ExtResource( 12 )
+
+[node name="WeaponIcon" parent="UI/Chair" instance=ExtResource( 5 )]
+position = Vector2( 50.2279, 37.8618 )
+is_static = false
+weapon_id = "chair"
+icon_scale = 0.2
+icon_texture = ExtResource( 12 )
+
 [node name="YardGrid" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.06694, 0, -10.8913 )
 
@@ -101,17 +149,9 @@ light_color = Color( 0.839216, 0.901961, 0.286275, 1 )
 light_energy = 0.7
 light_indirect_energy = 11.2
 light_specular = 0.46
+shadow_enabled = true
 spot_range = 14.0
 spot_angle = 73.125
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Chair" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -10 )
-
-[node name="RoadBlock" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -2 )
-
-[node name="RoadBlock2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -6 )

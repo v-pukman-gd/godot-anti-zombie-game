@@ -9,6 +9,7 @@ extents = Vector3( 0.516935, 1, 0.921015 )
 
 [node name="RoadBlockLight" type="Spatial"]
 script = ExtResource( 2 )
+life_span = 50
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( -0.0915127, 0, 0.982838, 0, 1, 0, -0.518994, 0, -0.173301, -0.22592, -0.00713336, -0.968299 )
