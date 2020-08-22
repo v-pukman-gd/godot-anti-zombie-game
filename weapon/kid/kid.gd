@@ -16,3 +16,7 @@ func attack():
 	var stone = stone_scn.instance()
 	stone.translation = Vector3(1, 1.5, 0)
 	add_child(stone)
+
+
+func remove():
+	queue_free()

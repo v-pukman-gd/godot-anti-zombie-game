@@ -40,8 +40,7 @@ func on_obstacle_hit(obstacle):
 func attack_obstacle():
 	print("attack_obstacle")
 	if is_stuck and obstacle:
-		obstacle.life_span -= attack_strength
-		if obstacle.life_span <= 0:
-			obstacle.remove()
+		obstacle.on_attacked_by_zombie(attack_strength)
+		if obstacle.is_destroyed:
 			is_stuck = false
 			obstacle = null

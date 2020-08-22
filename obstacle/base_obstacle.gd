@@ -3,6 +3,7 @@ extends Spatial
 export (int) var life_span = 20
 
 var is_collided = false
+var is_destroyed = false
 var zombie
 
 onready var area = $Area
@@ -20,6 +21,18 @@ func _on_area_entered(area_entered):
 			
 func on_hit():
 	zombie.on_obstacle_hit(self)
+	
+func on_attacked_by_zombie(damage):
+	if is_destroyed:
+		return
+	
+	life_span -= damage
+	if life_span <= 0:
+		is_destroyed = true
+		on_destroyed()
+		
+func on_destroyed():
+	remove()
 	
 func remove():
 	queue_free()
