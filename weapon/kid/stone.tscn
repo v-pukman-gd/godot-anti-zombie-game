@@ -9,7 +9,6 @@ albedo_color = Color( 0.886275, 0.886275, 0.886275, 1 )
 
 [node name="Stone" type="Spatial"]
 script = ExtResource( 1 )
-damage = 2
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
 

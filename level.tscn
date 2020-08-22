@@ -34,16 +34,19 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="Zombie" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 12, 0, -9.891 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 20, 0, -9.891 )
 
 [node name="Zombie2" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 18.2477, 0, -7.74638 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 26.2477, 0, -7.74638 )
 
 [node name="Zombie3" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 21.4052, 0, -3.83104 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 29.4052, 0, -3.83104 )
 
-[node name="Zombie4" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 18, 0, -2 )
+[node name="Zombie5" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 20.4052, 0, -3.83104 )
+
+[node name="Zombie6" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 16, 0, -2 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 450.0

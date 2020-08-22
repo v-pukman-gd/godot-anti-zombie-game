@@ -44,3 +44,6 @@ func attack_obstacle():
 		if obstacle.is_destroyed:
 			is_stuck = false
 			obstacle = null
+
+func on_destroyed():
+	queue_free()
