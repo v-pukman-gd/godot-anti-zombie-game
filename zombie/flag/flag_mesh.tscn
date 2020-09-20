@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://brains_txt.png" type="Texture" id=1]
+[ext_resource path="res://zombie/flag/brains_txt.png" type="Texture" id=1]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id=1]
 code = "shader_type spatial;
 //render_mode unshaded, specular_toon;
 
@@ -23,38 +23,29 @@ void vertex() {
 	
 	VERTEX.y += texture_based_offset;
 	VERTEX.z += texture_based_offset * face_distortion;
-	
 }
 
 void fragment() {
-	//ALBEDO = vec3(0.1, 0.3, 0.5);
-	//ROUGHNESS = 1.0;
-	//METALLIC = 0.0;
-	
-	//COLOR = vec3(0.0,0.0,0.0); //texture(color_texture, vec2(0.0, 0.0));
-	
-	//ALBEDO = vec3(texture(color_texture, vec2(0.0,0.0)).r, texture(color_texture, vec2(0.0,0.0)).g, texture(color_texture, vec2(0.0,0.0)).b);
 	vec3 txt = texture(color_texture, UV).rgb;
 	ALBEDO = txt;
-	//ALBEDO = texture(color_texture, uv);
 }"
 
-[sub_resource type="OpenSimplexNoise" id=4]
+[sub_resource type="OpenSimplexNoise" id=2]
 
-[sub_resource type="NoiseTexture" id=5]
+[sub_resource type="NoiseTexture" id=3]
 seamless = true
-noise = SubResource( 4 )
+noise = SubResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-shader_param/uv_offset_scale = Vector2( -0.2, -0.1 )
-shader_param/time_scale = Vector2( 0.3, 0 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 1 )
+shader_param/uv_offset_scale = Vector2( -0.3, -0.3 )
+shader_param/time_scale = Vector2( 0.5, 0.5 )
 shader_param/face_distortion = 0.5
-shader_param/uv_offset_texture = SubResource( 5 )
+shader_param/uv_offset_texture = SubResource( 3 )
 shader_param/color_texture = ExtResource( 1 )
 
-[sub_resource type="PlaneMesh" id=1]
-material = SubResource( 3 )
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 4 )
 size = Vector2( 3, 2 )
 subdivide_width = 32
 subdivide_depth = 32
@@ -65,10 +56,10 @@ size = Vector3( 0.1, 0.1, 6 )
 [sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.168627, 0.117647, 0.117647, 1 )
 
-[node name="Flag" type="Spatial"]
+[node name="FlagMesh" type="Spatial"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]

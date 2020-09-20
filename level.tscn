@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://grass4.jpg" type="Texture" id=1]
 [ext_resource path="res://panel/weapon_panel_item.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://obstacle/road_block/road_block_light_icon.png" type="Texture" id=7]
 [ext_resource path="res://obstacle/chair/chair_icon.png" type="Texture" id=8]
 [ext_resource path="res://obstacle/road_block/road_block_heavy_icon.png" type="Texture" id=9]
-[ext_resource path="res://flag.tscn" type="PackedScene" id=10]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -45,6 +44,7 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 29.4052
 
 [node name="Zombie5" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 20.4052, 0, -3.83104 )
+with_flag = true
 
 [node name="Zombie6" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 16, 0, -2 )
@@ -109,6 +109,3 @@ spot_angle = 73.125
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Flag" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 9, 2, -7 )

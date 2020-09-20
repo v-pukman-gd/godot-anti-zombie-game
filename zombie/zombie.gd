@@ -4,6 +4,10 @@ var speed = Vector3(-1, 0, 0)
 onready var fsm = $FSM3D
 onready var anim = $ZombieMesh/AnimationPlayer
 
+onready var flag = $ZombieMesh/Armature/Skeleton/BoneAttachment/Flag
+
+export (bool) var with_flag = false
+
 var life_span = 20
 var attack_strength = 5
 
@@ -15,6 +19,9 @@ var obstacle = null
 
 func _ready():
 	fsm.init()
+	
+	if with_flag:
+		flag.show()
 	
 func _input(event):
 	if event.is_action_pressed("start"):

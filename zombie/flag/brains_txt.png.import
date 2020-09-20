@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/brains_txt.png-cd34a4363025a1eefc905b9dd9f76dcf.s3tc.stex"
-path.etc2="res://.import/brains_txt.png-cd34a4363025a1eefc905b9dd9f76dcf.etc2.stex"
+path.s3tc="res://.import/brains_txt.png-704d750d34488e0c160491820bb63221.s3tc.stex"
+path.etc2="res://.import/brains_txt.png-704d750d34488e0c160491820bb63221.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://brains_txt.png"
-dest_files=[ "res://.import/brains_txt.png-cd34a4363025a1eefc905b9dd9f76dcf.s3tc.stex", "res://.import/brains_txt.png-cd34a4363025a1eefc905b9dd9f76dcf.etc2.stex" ]
+source_file="res://zombie/flag/brains_txt.png"
+dest_files=[ "res://.import/brains_txt.png-704d750d34488e0c160491820bb63221.s3tc.stex", "res://.import/brains_txt.png-704d750d34488e0c160491820bb63221.etc2.stex" ]
 
 [params]
 
