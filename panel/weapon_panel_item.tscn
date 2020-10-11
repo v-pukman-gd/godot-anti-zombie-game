@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://panel/weapon_panel_item.gd" type="Script" id=2]
+[ext_resource path="res://weapon/weapon_icon.tscn" type="PackedScene" id=3]
+
+[node name="WeaponPanelItem" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="WeaponIconStatic" parent="." instance=ExtResource( 3 )]
+position = Vector2( 50.2279, 37.4426 )
+
+[node name="WeaponIcon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 50.2279, 37.4426 )

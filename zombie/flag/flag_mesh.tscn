@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://zombie/flag/brains_txt.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+//render_mode unshaded, specular_toon;
+
+uniform sampler2D uv_offset_texture: hint_black;
+uniform vec2 uv_offset_scale = vec2(-0.2, -0.1);
+uniform vec2 time_scale = vec2(0.3, 0.0);
+uniform float face_distortion = 0.5;
+
+uniform sampler2D color_texture: hint_black;
+
+void vertex() {
+	vec2 base_uv_offset = UV * uv_offset_scale;
+	base_uv_offset += TIME * time_scale;
+	
+	float noise = texture(uv_offset_texture, base_uv_offset).r;
+	float texture_based_offset = noise * 2.0 - 1.0;
+	texture_based_offset *= UV.x;
+	
+	VERTEX.y += texture_based_offset;
+	VERTEX.z += texture_based_offset * face_distortion;
+}
+
+void fragment() {
+	vec3 txt = texture(color_texture, UV).rgb;
+	ALBEDO = txt;
+}"
+
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 1 )
+shader_param/uv_offset_scale = Vector2( -0.3, -0.3 )
+shader_param/time_scale = Vector2( 0.5, 0.5 )
+shader_param/face_distortion = 0.5
+shader_param/uv_offset_texture = SubResource( 3 )
+shader_param/color_texture = ExtResource( 1 )
+
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 3, 2 )
+subdivide_width = 32
+subdivide_depth = 32
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 0.1, 0.1, 6 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.168627, 0.117647, 0.117647, 1 )
+
+[node name="FlagMesh" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53313, -0.00672352, 1.84847 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
